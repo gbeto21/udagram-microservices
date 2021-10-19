@@ -19,13 +19,13 @@ script:
   - docker build -t udagram-api-user ./udagram-api-user
   - docker tag udagram-api-user gbeto21/udagram-api-user:v1
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-api-reverseproxy gbeto21/udagram-api-reverseproxy:v1
+  - docker tag udagram-reverseproxy gbeto21/udagram-api-reverseproxy:v1
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-api-frontend gbeto21/udagram-api-frontend:v1
+  - docker tag udagram-frontend gbeto21/udagram-api-frontend:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push gbeto21/udagram-api-feed:v1
   - docker push gbeto21/udagram-api-user:v1
-  - docker push gbeto21/udagram-api-reverseproxy:v1
-  - docker push gbeto21/udagram-api-frontend:v1
+  - docker push gbeto21/udagram-reverseproxy:v1
+  - docker push gbeto21/udagram-frontend:v1
