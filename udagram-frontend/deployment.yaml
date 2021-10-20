@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: gbeto21/udagram-frontend:v1
+        image: gbeto21/udagram-frontend:2
         ports:
         - containerPort: 80
