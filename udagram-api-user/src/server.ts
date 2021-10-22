@@ -10,11 +10,6 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
 
 
 (async () => {
-
-  console.log("Config values: ")
-  console.log(config.host);
-  console.log(config.database);
-  console.log(config.username);
   
   await sequelize.addModels(V0_USER_MODELS);
 
