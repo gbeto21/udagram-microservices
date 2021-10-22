@@ -10,6 +10,12 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
 
 
 (async () => {
+
+  console.log("Config values: ")
+  console.log(config.host);
+  console.log(config.database);
+  console.log(config.username);
+  
   await sequelize.addModels(V0_USER_MODELS);
 
   console.debug("Initialize database connection...");
@@ -45,6 +51,7 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
   // Start the Server
   app.listen( port, () => {
     console.log( `server running ${config.url}` );
+    console.log(`Port: ${port}`);    
     console.log( `press CTRL+C to stop server` );
   } );
 })();
